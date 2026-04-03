@@ -7,7 +7,6 @@ class ActorManager:
     def __init__(self, db_name: str, table_name: str) -> None:
         self.connection = sqlite3.connect(db_name)
         self.table_name = table_name
-        self.actor_list = []
 
     def create(self, first_name: str, last_name: str) -> None:
         query = (
