@@ -9,13 +9,6 @@ class ActorManager:
         self.table_name = table_name
         self.actor_list = []
 
-    con = sqlite3.connect(":memory:")
-    cursor = con.cursor()
-    cursor.execute("CREATE TABLE actor "
-                   "(id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT)")
-    con.commit()
-    con.close()
-
     def create(self, first_name:str, last_name:str) -> None:
         query = (
             f"INSERT INTO {self.table_name} (first_name, last_name) "
